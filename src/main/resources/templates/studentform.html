@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h4>Create Student</h4>
+
+<form  action="#" th:action="@{/addstudent}"  th:object="${student}" method="post">
+
+
+
+    First Name:<input type="text" th:field="*{firstname}"/>
+
+    <span th:if ="${#fields.hasErrors('firstname')}"
+    th:errors="*{firstname}"></span><br>
+
+    Last Name:<input type="text" th:field="*{lastname}"/>
+    <span th:if ="${#fields.hasErrors('lastname')}"
+          th:errors="*{lastname}"></span><br>
+    <br>
+
+    <select th:field="*{major}">
+        <option th:value="''" > Major</option>
+        <option th:value="'IT'" >IT</option>
+        <option th:value="'Java'">Java</option>
+  </select>
+    <br>
+
+    <input type="submit" value="Submit"/>
+
+
+
+
+
+
+
+
+</form>
+
+
+
+</body>
+</html>

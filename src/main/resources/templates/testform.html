@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h3>Test</h3>
+
+</head>
+<body>
+
+<form  action="#" th:action="@{/addtest}"  th:object="${test}" method="post">
+
+    <select th:field="*{student}">
+        <option th:each="student:${teststudent}" th:value="${student.id}" > [[${student.firstname}]]</option>
+
+    </select>
+
+    Date <input th:field="*{date}" type="text">
+    Score <input th:field="*{score}" type="number">
+
+    <input type="submit" value="Submit">
+
+</form>
+
+
+</body>
+
+</html>
